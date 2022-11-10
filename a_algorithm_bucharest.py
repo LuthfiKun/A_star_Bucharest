@@ -73,6 +73,7 @@ path = [] #Node yang akan dilalui
 path.append(start) #Append starting point ke path
 total_len = 0 #Total jarak real
 
+#Iterasi selama belum sampai di Bucharest
 while start != "Bucharest":
   #Ambil kandidat node yang berelasi dengan starting point
   candidate = df_nodes.loc[(df_nodes['Nodes 1'] == start) | (df_nodes['Nodes 2'] == start)]
@@ -112,5 +113,5 @@ while start != "Bucharest":
   total_len += curr_best_len #Kalkulasi jarak real
   start = curr_best_node #Ubah node yang terbaik menjadi starting point iterasi selanjutnya
 
-print("Jalur yang akan dilalui: ", path)
-print("Total jarak yang ditempuh: ", total_len)
+print("Jalur yang akan dilalui: ", path) #Output path yang dilalui
+print("Total jarak yang ditempuh: ", total_len) #Output jarak yang ditempuh
